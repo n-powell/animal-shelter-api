@@ -11,7 +11,7 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    @animal = Animal.create(animal_params)
+    @animal = Animal.create!(animal_params)
     json_response(@animal)
   end
 
@@ -31,6 +31,6 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.permit(:author, :content)
+    params.permit(:name, :animal_type, :adoption_fee, :age, :sex, :weight, :available)
   end
 end
