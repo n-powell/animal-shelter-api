@@ -7,7 +7,7 @@ class AnimalsController < ApplicationController
       json_response(@animals.sample)
     else
     @animals = Animal.name_search(name)
-      json_response(@animals)
+      json_response(@animals.page(params[:page]))
     end
   end
 

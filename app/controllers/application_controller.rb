@@ -24,4 +24,8 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::UnknownPrimaryKey do |exception|
     json_response({ message: exception.message }, :not_found)
   end
+
+  rescue_from ActiveRecord::RecordNotUnique do |exception|
+    json_response({ message: exception.message }, :not_found)
+  end
 end
