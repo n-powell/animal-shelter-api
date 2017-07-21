@@ -3,8 +3,12 @@ class AnimalsController < ApplicationController
   def index
     @animals = Animal.all
     name = params[:name]
+    if name == "random"
+      json_response(@animals.sample)
+    else
     @animals = Animal.name_search(name)
-    json_response(@animals)
+      json_response(@animals)
+    end
   end
 
   def show
