@@ -2,8 +2,12 @@
 
 ## This is an Rails API for an animal shelter.
 * Search by ID
+
 * Search by Name
-* If you desire to have a random animal selected. Please input "random" as the animals name.
+***If using postman --> Click "Params" next to send button. Input name into the Key text area on left. Input name you wish to search for(ex: "Bella") in Value text area to its right. Then Send.*** ***note: searching is case sensitive in postman, however, not when using chrome web browser.***
+
+* If you desire to have a random animal selected. Please input "random" as the animals name when searching.
+***If using postman --> Click "Params" next to send button. Input name into the Key text area on left. Input "random" in Value text area to its right. Then Send.***
 
 ### Animals Details
 * Name
