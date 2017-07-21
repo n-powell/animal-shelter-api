@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory(:animal) do
-    content('hello')
-    author('monique')
     name('lilliy')
     animal_type('cat')
     age(1)
