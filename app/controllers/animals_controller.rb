@@ -1,51 +1,36 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: [:show, :update, :destroy]
 
-  # GET /animals
   def index
     @animals = Animal.all
-
-    render json: @animals
+    json_response(@animals)
   end
 
-  # GET /animals/1
   def show
-    render json: @animal
+    @animal = Animal.find(params[:id])
+    json_response(@animal)
   end
 
-  # POST /animals
   def create
-    @animal = Animal.new(animal_params)
-
-    if @animal.save
-      render json: @animal, status: :created, location: @animal
-    else
-      render json: @animal.errors, status: :unprocessable_entity
-    end
+    @animal = Animal.create(animal_params)
+    json_response(@animal)
   end
 
-  # PATCH/PUT /animals/1
   def update
-    if @animal.update(animal_params)
-      render json: @animal
-    else
-      render json: @animal.errors, status: :unprocessable_entity
-    end
+    @animal = Animal.find(params[:id])
+    @animal.update(animal_params)
   end
 
-  # DELETE /animals/1
   def destroy
+    @animal = Animal.find(params[:id])
     @animal.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_animal
-      @animal = Animal.find(params[:id])
-    end
+  def json_response(object, status = :ok)
+    render json: object, status: status
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def animal_params
-      params.require(:animal).permit(:name, :animal_type, :adoption_fee, :age, :sex, :weight, :available)
-    end
+  def animal_params
+    params.permit(:author, :content)
+  end
 end
