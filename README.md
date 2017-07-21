@@ -1,8 +1,11 @@
 # Animal Shelter API
 
 ## This is an Rails API for an animal shelter.
+* Search by ID
+* Search by Name
+* If you desire to have a random animal selected. Please input "random" as the animals name"
 
-### animals
+### Animals Details
 * Name
 * Animal Type
 * Age
@@ -14,14 +17,14 @@
 * _Ruby version 2.2.5_
 
 * _Database creation_
-**rake db:create**
+* **rake db:create**
 
 * Database initialization
-**rake db:setup**
+* **rake db:setup**
 
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-**localhost:3000**
+* **localhost:3000**
